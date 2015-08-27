@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreMotion
 
 class ViewController: UIViewController {
 
@@ -29,8 +30,11 @@ class ViewController: UIViewController {
     var numFluit: Int? //果物の数
     
     var score: Int? //スコア
+    var steps: NSNumber?//歩数
     
     var timer: NSTimer?
+    
+    var pedometer: CMPedometer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,12 +46,15 @@ class ViewController: UIViewController {
         status = .Wakaba
         numFluit = 0
         score = 0
+        steps = 0
+        pedometer = CMPedometer()
         
         //現在の状態を復帰する
         loadState()
         
         //最初の状態を作成する
         updateStatus()
+        
         timer = NSTimer.scheduledTimerWithTimeInterval(30, target: self, selector: "updateState", userInfo: nil, repeats: true)
 
     }
@@ -173,6 +180,21 @@ class ViewController: UIViewController {
         println(deltaDate)
         println(deltaWater)
         
+        if (CMPedometer.isStepCountingAvailable)(){//歩数測定ができるデバイスのときにtrueを返す。
+            
+            let fromDate = NSDate(timeIntervalSinceNow: -60 * 60 * 24)  //この日から
+            let toDate = NSDate()  // この日まで。現在日時を取得する
+            
+            pedometer.queryPedometerDataFromDate(fromDate, toDate: toDate, withHandler: {(pedometerData:CMPedometerData!, error:NSError!) in
+                if error==nil {
+                    self.steps = pedometerData.numberOfSteps
+                    // スコアを表示する
+                    self.label.text = "Steps:\(self.steps!)"
+                }
+                
+            })
+        }
+        
         if deltaWater > 1*60{
             //枯れ木状態に
             status = .Kareki
@@ -245,8 +267,6 @@ class ViewController: UIViewController {
                 UIGraphicsEndImageContext()
             }
         }
-        // スコアを表示する
-        label.text = "Score:\(score!)"
         
     }
 
