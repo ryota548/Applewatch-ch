@@ -11,7 +11,7 @@
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="AppleWatch_ch_WatchKit_App" customModuleProvider="target">
                     <items>
                         <label alignment="left" text="Hello World!" id="oOw-cP-dci"/>
-                        <imageView width="134" height="120" alignment="center" verticalAlignment="center" id="aa5-cE-yfz"/>
+                        <imageView width="133" height="121" alignment="center" verticalAlignment="center" id="aa5-cE-yfz"/>
                     </items>
                     <menu key="menu" id="XwA-D0-CpN">
                         <items>
@@ -45,10 +45,22 @@
             <objects>
                 <glanceController spacing="0.0" id="0uZ-2p-rRc" customClass="GlanceController" customModule="AppleWatch_ch_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <group alignment="left" id="t8f-Gd-c4y"/>
-                        <group alignment="left" id="uCw-4Q-Ouw"/>
+                        <group alignment="left" id="t8f-Gd-c4y">
+                            <items>
+                                <label alignment="center" verticalAlignment="center" text="Label" id="fdg-kC-lsE"/>
+                            </items>
+                        </group>
+                        <group alignment="left" id="uCw-4Q-Ouw">
+                            <items>
+                                <imageView width="136" height="127" alignment="center" verticalAlignment="center" id="PXs-dq-YoA"/>
+                            </items>
+                        </group>
                     </items>
                     <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="14"/>
+                    <connections>
+                        <outlet property="image" destination="PXs-dq-YoA" id="06t-yi-Flx"/>
+                        <outlet property="label" destination="fdg-kC-lsE" id="ct5-WZ-uWY"/>
+                    </connections>
                 </glanceController>
             </objects>
             <point key="canvasLocation" x="235" y="672"/>
