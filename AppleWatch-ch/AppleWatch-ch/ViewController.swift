@@ -36,9 +36,14 @@ class ViewController: UIViewController {
     
     var pedometer: CMPedometer!
     
+    var str:String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib
+        
+        var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.vc = self
         
         lastDate = NSDate()
         lastWater = NSDate()
@@ -190,8 +195,9 @@ class ViewController: UIViewController {
                     self.steps = pedometerData.numberOfSteps
                     // スコアを表示する
                     self.label.text = "Steps:\(self.steps!)"
+                    self.str = "Steps:\(self.steps!)"
                 }
-                
+    
             })
         }
         
@@ -270,7 +276,9 @@ class ViewController: UIViewController {
         
     }
 
-
+    func returnStringStr() -> String {
+        return self.str
+    }
 
 }
 

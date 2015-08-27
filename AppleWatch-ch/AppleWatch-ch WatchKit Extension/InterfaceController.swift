@@ -163,6 +163,14 @@ class InterfaceController: WKInterfaceController {
         println(deltaDate)
         println(deltaWater)
         
+        let sendData = ["sendmessage": "contents"]
+        WKInterfaceController.openParentApplication(sendData as [NSObject:AnyObject] ,reply: { (replyinfo, error) -> Void in
+            var teststr:String = replyinfo["App3"]  as! String
+            // スコアを表示する
+            self.label.setText("\(teststr) steps")
+            println(teststr)
+        })
+        
         if deltaWater > 1*60{
             //枯れ木状態に
             status = .Kareki
@@ -235,8 +243,7 @@ class InterfaceController: WKInterfaceController {
                 UIGraphicsEndImageContext()
             }
         }
-        // スコアを表示する
-        label.setText("Score:\(score!)")
-    
     }
+    
+    
 }
