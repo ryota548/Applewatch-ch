@@ -108,7 +108,7 @@ class InterfaceController: WKInterfaceController {
     
     func saveState(){
         //現在の状態を保存する
-        var usrDef: NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        var usrDef: NSUserDefaults = NSUserDefaults(suiteName: "group.applewatch-ch")!
         usrDef.setObject(lastDate, forKey: "DATE")
         usrDef.setObject(lastWater, forKey: "WATER")
         usrDef.setBool(hiryou!, forKey: "HIRYOU")
@@ -120,7 +120,7 @@ class InterfaceController: WKInterfaceController {
     
     func loadState(){
         //現在の状態を復帰する
-        var usrDef: NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        var usrDef: NSUserDefaults = NSUserDefaults(suiteName: "group.applewatch-ch")!
         
         var date: NSDate? = usrDef.objectForKey("DATE") as? NSDate
         if date != nil {

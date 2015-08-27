@@ -85,6 +85,8 @@
 		3DF39FFF1B8D6AE000A8BE45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3DF3A0011B8D6AE000A8BE45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		3DF3A0031B8D6AE000A8BE45 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		3DF3A0111B8EBBCD00A8BE45 /* AppleWatch-ch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "AppleWatch-ch.entitlements"; sourceTree = "<group>"; };
+		3DF3A0121B8EBC7500A8BE45 /* AppleWatch-ch WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "AppleWatch-ch WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 		3DF39FC01B8D657200A8BE45 /* AppleWatch-ch */ = {
 			isa = PBXGroup;
 			children = (
+				3DF3A0111B8EBBCD00A8BE45 /* AppleWatch-ch.entitlements */,
 				3DF39FC31B8D657200A8BE45 /* AppDelegate.swift */,
 				3DF39FC81B8D657200A8BE45 /* ViewController.swift */,
 				3DF39FCA1B8D657200A8BE45 /* Main.storyboard */,
@@ -176,6 +179,7 @@
 		3DF39FEB1B8D6AE000A8BE45 /* AppleWatch-ch WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				3DF3A0121B8EBC7500A8BE45 /* AppleWatch-ch WatchKit Extension.entitlements */,
 				3DF39FEF1B8D6AE000A8BE45 /* InterfaceController.swift */,
 				3DF39FF11B8D6AE000A8BE45 /* NotificationController.swift */,
 				3DF39FF31B8D6AE000A8BE45 /* GlanceController.swift */,
@@ -297,6 +301,11 @@
 					3DF39FBD1B8D657200A8BE45 = {
 						CreatedOnToolsVersion = 6.4;
 						DevelopmentTeam = YC69FPVLLN;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					3DF39FD51B8D657300A8BE45 = {
 						CreatedOnToolsVersion = 6.4;
@@ -304,6 +313,12 @@
 					};
 					3DF39FE91B8D6AE000A8BE45 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = YC69FPVLLN;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					3DF39FF81B8D6AE000A8BE45 = {
 						CreatedOnToolsVersion = 6.4;
@@ -533,10 +548,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "AppleWatch-ch/AppleWatch-ch.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "AppleWatch-ch/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -544,10 +562,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "AppleWatch-ch/AppleWatch-ch.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "AppleWatch-ch/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -620,6 +641,9 @@
 		3DF3A00C1B8D6AE000A8BE45 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "AppleWatch-ch WatchKit Extension/AppleWatch-ch WatchKit Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -627,6 +651,7 @@
 				INFOPLIST_FILE = "AppleWatch-ch WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -634,9 +659,13 @@
 		3DF3A00D1B8D6AE000A8BE45 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "AppleWatch-ch WatchKit Extension/AppleWatch-ch WatchKit Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "AppleWatch-ch WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;

@@ -47,7 +47,7 @@
                     <items>
                         <group alignment="left" id="t8f-Gd-c4y">
                             <items>
-                                <label alignment="center" verticalAlignment="center" text="Label" id="fdg-kC-lsE"/>
+                                <label alignment="left" verticalAlignment="center" text="Label" id="fdg-kC-lsE"/>
                             </items>
                         </group>
                         <group alignment="left" id="uCw-4Q-Ouw">
@@ -71,8 +71,10 @@
                 <notificationController id="YCC-NB-fut">
                     <items>
                         <label alignment="left" text="Alert Label" id="XkS-y5-khE"/>
+                        <separator alignment="left" id="qLJ-bJ-KbV"/>
+                        <label width="134" height="40" alignment="left" text="タイムリミットまであと一分" numberOfLines="2" id="T1b-Rl-kgj"/>
                     </items>
-                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <notificationCategory key="notificationCategory" identifier="applewatch" id="JfB-70-Muf"/>
                     <connections>
                         <outlet property="notificationAlertLabel" destination="XkS-y5-khE" id="49B-RR-99y"/>
                         <segue destination="gdX-wl-uQE" kind="relationship" relationship="dynamicNotificationInterface" id="fKh-qV-3T2"/>
@@ -84,9 +86,16 @@
         <!--Notification Controller-->
         <scene sceneID="KIl-fV-djm">
             <objects>
-                <controller id="gdX-wl-uQE" customClass="NotificationController" customModule="AppleWatch_ch_WatchKit_App" customModuleProvider="target"/>
+                <controller id="gdX-wl-uQE" customClass="NotificationController" customModule="AppleWatch_ch_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <imageView width="134" height="132" alignment="center" verticalAlignment="center" id="vfL-5a-7N3"/>
+                    </items>
+                    <connections>
+                        <outlet property="image" destination="vfL-5a-7N3" id="9D0-Xp-7uQ"/>
+                    </connections>
+                </controller>
             </objects>
-            <point key="canvasLocation" x="553" y="1001"/>
+            <point key="canvasLocation" x="553" y="1027.5"/>
         </scene>
     </scenes>
 </document>

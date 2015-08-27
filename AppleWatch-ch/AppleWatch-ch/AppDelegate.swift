@@ -17,6 +17,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        //ローカルのタイプにバッジ、アラート、サウンドを設定
+        var types: UIUserNotificationType = ((UIUserNotificationType.Alert)|(UIUserNotificationType.Badge)|(UIUserNotificationType.Sound))
+        //ローカル通知の設定を作成
+        var settings: UIUserNotificationSettings = UIUserNotificationSettings(forTypes: types, categories: nil)
+        //ローカル通知を設定
+        application.registerUserNotificationSettings(settings)
+        
         return true
     }
 

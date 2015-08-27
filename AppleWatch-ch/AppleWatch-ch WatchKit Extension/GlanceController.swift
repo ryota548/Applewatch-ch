@@ -29,7 +29,7 @@ class GlanceController: WKInterfaceController {
         // 植物の状態
         var status: InterfaceController.PlantStatus?
         = InterfaceController.PlantStatus.Wakaba
-        var usrDef: NSUserDefaults = NSUserDefaults()
+        var usrDef: NSUserDefaults = NSUserDefaults(suiteName: "group.applewatch-ch")!
         var st: Int? = usrDef.integerForKey("STATUS")
         if st != nil {
             status = InterfaceController.PlantStatus(rawValue: st!)
