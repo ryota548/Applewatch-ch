@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>6DAEE9A9-6CEA-444F-836B-263F929DB761</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>AppleWatch-ch</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>758B1967EE6448E0A778F8A7989E843D382823A0</key>
 		<string>http://github.o-in.dwango.co.jp/intern20150824/AppleWatch-ch.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>AppleWatch-ch/AppleWatch-ch.xcodeproj/project.xcworkspace</string>
+	<string>AppleWatch-ch/AppleWatch-ch.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>758B1967EE6448E0A778F8A7989E843D382823A0</key>
